@@ -1,0 +1,9 @@
+body {
+    background-color: #151515;
+}
+
+#livesearch {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+}

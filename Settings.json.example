@@ -1,0 +1,64 @@
+{
+    "Database": {
+        "Host": "localhost",
+        "Username": "freepbxuser",
+        "Password": "",
+        "Database": "asterisk"
+    },
+    "Brands": {
+        "Grandstream": {
+            "Active": 1,
+            "Logo": "Grandstream.png",
+            "FileName": "GS_Phonebook.xml"
+        },
+        "Poly": {
+            "Active": 1,
+            "Logo": "Poly.png",
+            "FileName": "Poly_Phonebook.xml"
+        },
+        "MicroSIP": {
+            "Active": 1,
+            "Logo": "MicroSIP.png",
+            "FileName": "MS_Phonebook.xml"
+        },
+        "Cisco": {
+            "Active": 1,
+            "Logo": "Cisco.png",
+            "FileName": "Cisco_Phonebook.xml"
+        },
+        "Yealink": {
+            "Active": 1,
+            "Logo": "Yealink.png",
+            "FileName": "Yealink_Phonebook.xml"
+        },
+        "Web": {
+            "Active": 1,
+            "Logo": "Web.png",
+            "FileName": "Web_Phonebook.xml"
+        },
+        "SingleVCard": {
+            "Active": 1,
+            "Logo": "vCard.png",
+            "Version": "v2_1"
+        },
+        "MultiVCard": {
+            "Active": 1,
+            "Logo": "vCard.png",
+            "FileName": "Contacts.vcf",
+            "Version": "v2_1"
+        }
+    },
+    "Directories": {
+        "Phonebooks": "PhonebookFiles\/",
+        "SinglevCardSub": "SinglevCards\/",
+        "Images": "Images\/"
+    },
+    "PBX": {
+        "URL": "",
+        "Logo": ""
+    },
+    "Hidden": {
+        "Blank": 0,
+        "WebRTC": 0
+    }
+}

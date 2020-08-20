@@ -1,0 +1,7 @@
+<Files "Settings.php">  
+    Require all denied
+</Files>
+
+<Files "Settings.json">  
+    Require all denied
+</Files>
