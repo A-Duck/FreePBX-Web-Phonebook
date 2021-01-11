@@ -58,7 +58,7 @@
                     }
                 }
                 
-                xmlhttp.open("GET", "livesearch.php?q=" + str, true);
+                xmlhttp.open("GET", "LiveSearch.php?q=" + str, true);
                 xmlhttp.send();
             }
         </script>
