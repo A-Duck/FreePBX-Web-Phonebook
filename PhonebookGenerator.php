@@ -175,16 +175,16 @@
         $Writer -> setIndent(4);
         
         $Writer -> startDocument('1.0');
-        $writer-> startElement('contacts');
-        $writer-> writeAttribute('refresh', 0);
+        $Writer-> startElement('contacts');
+        $Writer-> writeAttribute('refresh', 0);
         
         foreach ($ContactArray as $Value) 
         {
-            $writer->startElement('contact');
-            $writer->writeAttribute('name', $contact['description']);
-            $writer->writeAttribute('number', $contact['user']);
-            $writer->writeAttribute('presence', 1);
-            $writer->endElement();
+            $Writer->startElement('contact');
+            $Writer->writeAttribute('name', $Value[1]);
+            $Writer->writeAttribute('number', $Value[0]);
+            $Writer->writeAttribute('presence', 1);
+            $Writer->endElement();
         }
 
         $Writer -> endElement();
