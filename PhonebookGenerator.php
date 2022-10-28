@@ -107,8 +107,8 @@
             $AllNames = SplitName($Value[1]);
 
             $Writer -> startElement('Contact');
-            $Writer -> writeElement('LastName', @$AllNames[1]);
-            $Writer -> writeElement('FirstName', @$AllNames[0]);
+            $Writer -> writeElement('LastName', utf8_encode(@$AllNames[1]));
+            $Writer -> writeElement('FirstName', utf8_encode(@$AllNames[0]));
             $Writer -> startElement('Phone');
             $Writer -> writeElement('PhoneNumber', $Value[0]);
             $Writer -> writeElement('AccountIndex', 0);
@@ -146,8 +146,8 @@
             $AllNames = SplitName($Value[1]);
 
             $Writer -> startElement('Item');
-            $Writer -> writeElement('LN', @$AllNames[1]);
-            $Writer -> writeElement('FN', @$AllNames[0]);
+            $Writer -> writeElement('LN', utf8_encode(@$AllNames[1]));
+            $Writer -> writeElement('FN', utf8_encode(@$AllNames[0]));
             $Writer -> writeElement('CT', $Value[0]);
             $Writer -> endElement(); // End Item Element
         }
@@ -181,7 +181,7 @@
         foreach ($ContactArray as $Value) 
         {
             $Writer->startElement('contact');
-            $Writer->writeAttribute('name', $Value[1]);
+            $Writer->writeAttribute('name', utf8_encode($Value[1]));
             $Writer->writeAttribute('number', $Value[0]);
             $Writer->writeAttribute('presence', 1);
             $Writer->endElement();
@@ -217,7 +217,7 @@
         foreach ($ContactArray as $Value) 
         {
             $Writer -> startElement('DirectoryEntry');
-            $Writer -> writeElement('Name', $Value[1]);
+            $Writer -> writeElement('Name', utf8_encode($Value[1]));
             $Writer -> writeElement('Telephone', $Value[0]);
             $Writer -> endElement(); // Close DirectoryEntry Tag
         }
@@ -249,7 +249,7 @@
         foreach ($ContactArray as $Value)
         {
             $Writer -> startElement($ContactElement);
-            $Writer -> writeElement('Name', $Value[1]);
+            $Writer -> writeElement('Name', utf8_encode($Value[1]));
             $Writer -> writeElement('Ext', $Value[0]);
             $Writer -> endElement();
         }
@@ -288,7 +288,7 @@
     // Generates Content for vCard v2.1
     function vCard2_1ContentGenerator($Name, $PhoneNumber)
     {
-        $AllNames = SplitName($Name);
+        $AllNames = SplitName(utf8_encode($Name));
 
         $Content =
         BEGINVCARD . "\n" .
@@ -306,7 +306,7 @@
     // Generates Content for vCard v3
     function vCard3ContentGenerator($Name, $PhoneNumber)
     {
-        $AllNames = SplitName($Name);
+        $AllNames = SplitName(utf8_encode($Name));
 
         $Content =
         BEGINVCARD . "\n" .
@@ -324,7 +324,7 @@
     // Generates Content for vCard v4
     function vCard4ContentGenerator($Name, $PhoneNumber)
     {
-        $AllNames = SplitName($Name);
+        $AllNames = SplitName(utf8_encode($Name));
 
         $Content =
         BEGINVCARD . "\n" .
@@ -354,7 +354,7 @@
 
         foreach ($ContactArray as $Value)
         {
-            $MasterContent .= vCard2_1ContentGenerator($Value[1], $Value[0]);
+            $MasterContent .= vCard2_1ContentGenerator(utf8_encode($Value[1]), $Value[0]);
             $MasterContent .= "\n";
         }
 
@@ -370,7 +370,7 @@
 
         foreach ($ContactArray as $Value) 
         {
-            $MasterContent .= vCard3ContentGenerator($Value[1], $Value[0]);
+            $MasterContent .= vCard3ContentGenerator(utf8_encode($Value[1]), $Value[0]);
             $MasterContent .= "\n";
         }
 
@@ -386,7 +386,7 @@
         
         foreach ($ContactArray as $Value) 
         {
-            $MasterContent .= vCard4ContentGenerator($Value[1], $Value[0]);
+            $MasterContent .= vCard4ContentGenerator(utf8_encode($Value[1]), $Value[0]);
             $MasterContent .= "\n";
         }
 
@@ -437,7 +437,7 @@
         foreach ($ContactArray as $Value) 
         {
             $Path = $FilePath . $Value[1] . ".vcf";
-            FileWriter($Path, vCard2_1ContentGenerator($Value[1], $Value[0]));
+            FileWriter($Path, vCard2_1ContentGenerator(utf8_encode($Value[1]), $Value[0]));
         }
     }
 
@@ -449,7 +449,7 @@
         foreach ($ContactArray as $Value) 
         {
             $Path = $FilePath . $Value[1] . ".vcf";
-            FileWriter($Path, vCard3ContentGenerator($Value[1], $Value[0]));
+            FileWriter($Path, vCard3ContentGenerator(utf8_encode($Value[1]), $Value[0]));
         }
     }
 
@@ -461,7 +461,7 @@
         foreach ($ContactArray as $Value) 
         {
             $Path = $FilePath . $Value[1] . ".vcf";
-            FileWriter($Path, vCard4ContentGenerator($Value[1], $Value[0]));
+            FileWriter($Path, vCard4ContentGenerator(utf8_encode($Value[1]), $Value[0]));
         }
     }
 
