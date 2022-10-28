@@ -99,7 +99,7 @@
         $Writer -> openMemory();
         $Writer -> setIndent(4);
         
-        $Writer -> startDocument('1.0');
+        $Writer -> startDocument('1.0', 'UTF-8');
         $Writer -> startElement('AddressBook');
         
         foreach ($ContactArray as $Value)
@@ -137,7 +137,7 @@
         $Writer -> openMemory();
         $Writer -> setIndent(4);
         
-        $Writer -> startDocument('1.0');
+        $Writer -> startDocument('1.0', 'UTF-8');
         $Writer -> startElement('Directory');
         $Writer -> startElement('Item_List');
         
@@ -174,7 +174,7 @@
         $Writer -> openMemory();
         $Writer -> setIndent(4);
         
-        $Writer -> startDocument('1.0');
+        $Writer -> startDocument('1.0', 'UTF-8');
         $Writer-> startElement('contacts');
         $Writer-> writeAttribute('refresh', 0);
         
@@ -208,7 +208,7 @@
         $Writer -> openMemory();
         $Writer -> setIndent(4);
         
-        $Writer -> startDocument('1.0');
+        $Writer -> startDocument('1.0', 'UTF-8');
         $Writer -> startElement('CiscoIPPhoneDirectory');
         
         $Writer -> writeElement('Title', "Phonebook");
@@ -243,7 +243,7 @@
         $Writer -> openMemory();
         $Writer -> setIndent(4);
         
-        $Writer -> startDocument('1.0');
+        $Writer -> startDocument('1.0', 'UTF-8');
         $Writer -> startElement($PhoneBookElement);
         
         foreach ($ContactArray as $Value)
